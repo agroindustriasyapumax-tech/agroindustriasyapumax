@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Agroindustrias Yapumax — Fresh Natural Palette */
+    --background: 50 30% 97%;        /* Warm light cream */
+    --foreground: 65 33% 20%;        /* Oliva oscuro for text */
+
+    --card: 50 20% 99%;
+    --card-foreground: 65 33% 20%;
+
+    --popover: 50 20% 99%;
+    --popover-foreground: 65 33% 20%;
+
+    --primary: 65 58% 47%;           /* #B5BF32 — Verde lima */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 59 80% 56%;         /* #E8E635 — Amarillo vibrante */
+    --secondary-foreground: 65 33% 20%;
+
+    --muted: 50 15% 92%;
+    --muted-foreground: 65 15% 45%;
+
+    --accent: 30 55% 55%;            /* Color maní cálido — warm peanut brown */
+    --accent-foreground: 0 0% 100%;
+
+    --cta: 30 60% 50%;               /* Color maní más saturado para CTA */
+    --cta-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 50 15% 88%;
+    --input: 50 15% 88%;
+    --ring: 65 58% 47%;
+
+    --radius: 1.25rem;
+
+    --sidebar-background: 50 30% 97%;
+    --sidebar-foreground: 65 33% 20%;
+    --sidebar-primary: 65 58% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 59 80% 90%;
+    --sidebar-accent-foreground: 65 33% 20%;
+    --sidebar-border: 50 15% 88%;
+    --sidebar-ring: 65 58% 47%;
+  }
+
+  .dark {
+    --background: 65 25% 8%;         /* Dark olive background */
+    --foreground: 50 30% 92%;
+
+    --card: 65 20% 12%;
+    --card-foreground: 50 30% 92%;
+
+    --popover: 65 20% 12%;
+    --popover-foreground: 50 30% 92%;
+
+    --primary: 65 58% 52%;           /* Brighter verde lima for dark */
+    --primary-foreground: 65 25% 8%;
+
+    --secondary: 59 80% 60%;         /* Brighter amarillo */
+    --secondary-foreground: 65 25% 8%;
+
+    --muted: 65 15% 18%;
+    --muted-foreground: 50 15% 55%;
+
+    --accent: 30 55% 58%;            /* Brighter peanut brown */
+    --accent-foreground: 0 0% 100%;
+
+    --cta: 30 60% 55%;
+    --cta-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 65 15% 20%;
+    --input: 65 15% 20%;
+    --ring: 65 58% 52%;
+
+    --sidebar-background: 65 20% 10%;
+    --sidebar-foreground: 50 30% 92%;
+    --sidebar-primary: 65 58% 52%;
+    --sidebar-primary-foreground: 65 25% 8%;
+    --sidebar-accent: 65 15% 18%;
+    --sidebar-accent-foreground: 50 30% 92%;
+    --sidebar-border: 65 15% 20%;
+    --sidebar-ring: 65 58% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Brand gradient — replaces old rainbow */
+  .brand-gradient {
+    background: linear-gradient(90deg, #B5BF32 0%, #D4D930 30%, #E8E635 50%, #D9A527 75%, #6B7037 100%);
+  }
+
+  .brand-gradient-soft {
+    background: linear-gradient(90deg, hsl(65 58% 47% / 0.8), hsl(59 80% 56% / 0.6), hsl(30 55% 55% / 0.5));
+  }
+
+  /* Legacy rainbow support — now uses brand colors */
+  .rainbow-gradient {
+    background: linear-gradient(90deg, #B5BF32 0%, #D4D930 25%, #E8E635 50%, #C9963E 75%, #6B7037 100%);
+  }
+
+  .rainbow-text {
+    background: linear-gradient(90deg, #B5BF32, #E8E635, #C9963E, #6B7037);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes fill-bar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
+  .animate-fill-bar {
+    animation: fill-bar 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .card-glow-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-glow-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(181, 191, 50, 0.2), 0 10px 20px -10px rgba(201, 150, 62, 0.15);
+    border-color: rgba(181, 191, 50, 0.3);
+  }
+
+  /* Vignette effect for hero images */
+  .vignette-overlay {
+    position: relative;
+  }
+
+  .vignette-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.35) 100%);
+    pointer-events: none;
+  }
+
+  /* Hero slow zoom animation */
+  @keyframes heroZoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.15);
+    }
+  }
+
+  .animate-hero-zoom {
+    animation: heroZoom 35s ease-out forwards;
+  }
+}
+
+/* ========================================
+   Scroll Reveal Animations (IntersectionObserver)
+   GPU-accelerated: only transform + opacity
+   ======================================== */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.stagger-children.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 100ms; }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 200ms; }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 300ms; }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 400ms; }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 500ms; }
+
+/* Staggered children animation delays */
+.stagger-children > .scroll-reveal:nth-child(1) { transition-delay: 0s; }
+.stagger-children > .scroll-reveal:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children > .scroll-reveal:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children > .scroll-reveal:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children > .scroll-reveal:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children > .scroll-reveal:nth-child(6) { transition-delay: 0.5s; }
+.stagger-children > .scroll-reveal:nth-child(7) { transition-delay: 0.6s; }
+.stagger-children > .scroll-reveal:nth-child(8) { transition-delay: 0.7s; }
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 12px hsl(var(--accent) / 0);
+    }
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: floatMedium 5s ease-in-out infinite reverse;
+  }
+
+  .animate-float-reverse {
+    animation: floatReverse 6s ease-in-out infinite;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes floatMedium {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(-30px) rotate(-8deg) scale(1.05);
+    }
+  }
+
+  @keyframes floatReverse {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) rotate(10deg) scale(0.98);
+    }
+  }
+
+  .mix-blend-multiply-dark {
+    mix-blend-mode: multiply;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   Infinite Scrolling Gallery
+   ======================================== */
+.animate-scroll-right {
+  animation: scrollRight linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause on hover for better UX */
+.animate-scroll-right:hover,
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-float,
+  .animate-pulse-soft,
+  .animate-scroll-right,
+  .animate-scroll-left,
+  .animate-hero-zoom {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
