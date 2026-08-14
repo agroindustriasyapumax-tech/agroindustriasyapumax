@@ -33,7 +33,7 @@ const TIMELINE = [
     year: "Innovación",
     title: "Tecnología y Producción",
     body: "Desarrollamos nuestra primera tostadora de maní inspirada en tecnología italiana e implementamos un horno especializado que permitió mejorar nuestra producción y atender mayores volúmenes.",
-    image: "/products/mani_crudo.jpg",
+    image: "/products/mani_crudo.png",
   },
   {
     year: "Actualidad",
@@ -64,13 +64,13 @@ const PEANUT_SECTIONS = [
     icon: Search,
     title: "Selección del Maní",
     body: "La calidad del maní comienza desde su selección. Los granos son cuidadosamente clasificados para elegir únicamente aquellos que presentan el tamaño, color y estado adecuados. Posteriormente pasan por procesos de limpieza y clasificación que garantizan un producto uniforme, seguro y listo para su comercialización.",
-    image: "/products/mani_crudo.jpg",
+    image: "/products/mani_molido.png",
   },
   {
     icon: Apple,
     title: "Nutrición del Maní",
     body: "El maní es una excelente fuente de proteínas vegetales, grasas saludables, fibra, vitaminas y minerales esenciales como magnesio, fósforo y vitamina E. Su consumo aporta energía, favorece la salud cardiovascular y contribuye al mantenimiento de una alimentación equilibrada, convirtiéndolo en un alimento altamente nutritivo para personas de todas las edades.",
-    image: "/about_us/sacos.jpg",
+    image: "/products/mani2.png",
   },
 ];
 
@@ -412,16 +412,16 @@ function MediaGridSection({ currentTheme }: { currentTheme: ThemeState }) {
     <section className="py-20 md:py-32 relative overflow-hidden transition-colors duration-700">
       {/* Elementos flotantes de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <motion.img 
-          src="/soya_flotante.png" 
-          alt="Soya" 
+        <motion.img
+          src="/soya_flotante.png"
+          alt="Soya"
           className="absolute top-20 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 2 }}
         />
-        <motion.img 
-          src="/mani_flotante.png" 
-          alt="Maní" 
+        <motion.img
+          src="/mani_flotante.png"
+          alt="Maní"
           className="absolute bottom-20 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
@@ -506,16 +506,16 @@ function MediaGridSection({ currentTheme }: { currentTheme: ThemeState }) {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="rounded-[2rem] overflow-hidden shadow-lg aspect-[4/3] bg-muted/20 group"
             >
-              <img src="/products/mani_crudo.jpg" alt="Maní crudo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+              <img src="/products/mani2.png" alt="Maní crudo" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="rounded-[2rem] overflow-hidden shadow-lg aspect-[4/3] bg-muted/20 group"
+              className="rounded-[2rem] overflow-hidden shadow-lg aspect-[4/3] bg-muted/20 group relative"
             >
-              <img src="/products/soya.png" alt="Soya" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+              <video src="/about_us/video4.mp4" autoPlay loop muted playsInline className="w-full h-full object-cover scale-[3.5] transition-transform duration-1000 group-hover:scale-[3.6]" />
             </motion.div>
           </div>
         </div>
@@ -534,30 +534,30 @@ function TimelineSection({ currentTheme }: { currentTheme: ThemeState }) {
     <section ref={ref} className="relative py-32 bg-white text-slate-900 transition-colors duration-700">
       {/* Elementos flotantes de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <motion.img 
-          src="/soya_flotante.png" 
-          alt="Soya" 
+        <motion.img
+          src="/soya_flotante.png"
+          alt="Soya"
           className="absolute top-20 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
-        <motion.img 
-          src="/mani_flotante.png" 
-          alt="Maní" 
+        <motion.img
+          src="/mani_flotante.png"
+          alt="Maní"
           className="absolute bottom-40 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
         />
-        <motion.img 
-          src="/soya_flotante.png" 
-          alt="Soya" 
+        <motion.img
+          src="/soya_flotante.png"
+          alt="Soya"
           className="absolute top-1/2 right-20 w-32 md:w-48 opacity-30"
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 8, ease: "easeInOut", delay: 2 }}
         />
-        <motion.img 
-          src="/mani_flotante.png" 
-          alt="Maní" 
+        <motion.img
+          src="/mani_flotante.png"
+          alt="Maní"
           className="absolute bottom-1/4 left-20 w-32 md:w-48 opacity-30"
           animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 9, ease: "easeInOut", delay: 3 }}
@@ -724,16 +724,16 @@ function MissionVisionSection({ currentTheme }: { currentTheme: ThemeState }) {
 
       {/* Elementos flotantes de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
-        <motion.img 
-          src="/soya_flotante.png" 
-          alt="Soya" 
+        <motion.img
+          src="/soya_flotante.png"
+          alt="Soya"
           className="absolute top-10 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
-        <motion.img 
-          src="/mani_flotante.png" 
-          alt="Maní" 
+        <motion.img
+          src="/mani_flotante.png"
+          alt="Maní"
           className="absolute bottom-10 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
