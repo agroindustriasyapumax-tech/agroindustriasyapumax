@@ -241,11 +241,19 @@ const ProductoDetalle = () => {
 
               {/* Price */}
               <div className="flex flex-col">
-                <p className="text-sm text-muted-foreground font-medium mb-1">Precio referencial</p>
-                <p className="text-4xl font-display font-bold text-foreground">
-                  S/ {displayPrice}
-                  <span className="text-base font-normal text-muted-foreground ml-1">{priceSuffix}</span>
+                <p className="text-sm text-muted-foreground font-medium mb-1">
+                  {product.price > 0 ? "Precio referencial" : "Precio"}
                 </p>
+                {product.price > 0 ? (
+                  <p className="text-4xl font-display font-bold text-foreground">
+                    S/ {displayPrice}
+                    <span className="text-base font-normal text-muted-foreground ml-1">{priceSuffix}</span>
+                  </p>
+                ) : (
+                  <p className="text-2xl font-display font-bold text-accent">
+                    Consultar precio
+                  </p>
+                )}
               </div>
 
               <div className="w-full h-px bg-border" />

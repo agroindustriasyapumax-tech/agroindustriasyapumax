@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
 import { socialLinks } from "@/data/mockData";
 
+const TikTokIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
+  <svg
+    className={className}
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .56.04.83.12V9.36a6.33 6.33 0 0 0-1-.08A6.26 6.26 0 0 0 3 15.55a6.26 6.26 0 0 0 10.59 4.43V12.1a8.28 8.28 0 0 0 4.84 1.55V10.2a4.85 4.85 0 0 1-2.84-.96A4.8 4.8 0 0 1 19.59 6.69z" />
+  </svg>
+);
+
 export const Footer = () => {
   return (
     <footer className="bg-card border-t border-border relative">
@@ -40,6 +51,15 @@ export const Footer = () => {
                 className="h-11 w-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
               >
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href={socialLinks.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Síguenos en TikTok"
+                className="h-11 w-11 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+              >
+                <TikTokIcon className="h-5 w-5" />
               </a>
               <a
                 href={socialLinks.whatsapp}
@@ -92,11 +112,11 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:contacto@yapumax.com"
+                  href="mailto:agroindustriasyapumax@gmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  contacto@yapumax.com
+                  agroindustriasyapumax@gmail.com
                 </a>
               </li>
               <li>
@@ -118,7 +138,18 @@ export const Footer = () => {
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Instagram className="h-4 w-4" />
-                  @agroindustrias_yapumax
+                  @agro_yapumax
+                </a>
+              </li>
+              <li>
+                <a
+                  href={socialLinks.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <TikTokIcon className="h-4 w-4" />
+                  TikTok
                 </a>
               </li>
             </ul>

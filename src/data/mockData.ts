@@ -99,7 +99,7 @@ export const products: Product[] = [
     name: "Mantequilla de Maní Yapumax",
     shortDescription: "100% natural, súper cremosa y sin azúcares añadidos.",
     description: "¡Próximo Lanzamiento! Mantequilla de maní 100% natural, súper cremosa y elaborada con la mejor selección de granos. Sin azúcares ni aceites añadidos.",
-    price: 8.00,
+    price: 0.00,
     images: ["/products/mantequilla_de_mani.jpg"],
     category: "mantequillas",
     inStock: false,
@@ -183,5 +183,6 @@ export const categories = [
 export const socialLinks = {
   instagram: "https://instagram.com/agro_yapumax",
   facebook: "https://www.facebook.com/profile.php?id=61592485581933",
+  tiktok: "https://www.tiktok.com/@agroindustriasyapumax?_r=1&_t=ZS-98swLKuTqey",
   whatsapp: "https://wa.me/51944221793",
 };

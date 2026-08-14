@@ -57,10 +57,10 @@ export const ContactSection = () => {
               <p className="text-[#2C3316]/80">
                 También puedes escribirnos directamente a{" "}
                 <a
-                  href="mailto:contacto@yapumax.com"
+                  href="mailto:agroindustriasyapumax@gmail.com"
                   className="font-bold text-[#2C3316] hover:text-[#B5BF32] transition-colors underline decoration-[#B5BF32]/50 underline-offset-4"
                 >
-                  contacto@yapumax.com
+                  agroindustriasyapumax@gmail.com
                 </a>
               </p>
             </div>

@@ -83,7 +83,7 @@ const Contacto = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg text-foreground">Nuestra Planta</p>
-                      <p className="text-muted-foreground leading-relaxed">Av. Industrial 123, Zona Agrícola<br />Lima, Perú</p>
+                      <p className="text-muted-foreground leading-relaxed">Pasaje Pisagua & Avenida San Pablo, La Victoria<br />Lima, Perú</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
@@ -92,7 +92,7 @@ const Contacto = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg text-foreground">Llámanos</p>
-                      <p className="text-muted-foreground">+51 987 654 321<br />+51 (01) 234 5678</p>
+                      <p className="text-muted-foreground">+51 944 221 793</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
@@ -101,7 +101,7 @@ const Contacto = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg text-foreground">Correo Electrónico</p>
-                      <p className="text-muted-foreground">ventas@yapumax.com<br />contacto@yapumax.com</p>
+                      <p className="text-muted-foreground">agroindustriasyapumax@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
@@ -110,7 +110,7 @@ const Contacto = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg text-foreground">Horario de Atención</p>
-                      <p className="text-muted-foreground">Lunes a Viernes: 8:00 AM - 6:00 PM<br />Sábados: 9:00 AM - 1:00 PM</p>
+                      <p className="text-muted-foreground">Lunes a viernes 8:00 AM - 5:30 PM<br />Sábados 8:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const Contacto = () => {
             <div className="rounded-[2rem] overflow-hidden h-[500px] md:h-[650px] w-full relative group">
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62424.70171821794!2d-77.07583233551902!3d-12.074874013242784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b1065496a5%3A0x2a1e7ba9f36ecfcc!2sCongreso%20de%20la%20Rep%C3%BAblica%20del%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1783722800382!5m2!1ses!2spe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6399143755975!2d-77.0093001!3d-12.068278099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c62748cfbb39%3A0x9a71246e35389e2f!2sAv%20San%20Pablo%20%26%20Pje%20Pisagua%2C%20La%20Victoria%2015019!5e0!3m2!1ses!2spe!4v1786740274952!5m2!1ses!2spe"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

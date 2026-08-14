@@ -67,12 +67,18 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 S/ {product.originalPrice.toFixed(2)}
               </span>
             )}
-            <span className="text-xl font-bold text-primary">
-              S/ {product.price.toFixed(2)}
-              {product.category !== "mantequillas" && product.category !== "combos" && (
-                <span className="text-xs font-normal text-muted-foreground"> / kg</span>
-              )}
-            </span>
+            {product.price > 0 ? (
+              <span className="text-xl font-bold text-primary">
+                S/ {product.price.toFixed(2)}
+                {product.category !== "mantequillas" && product.category !== "combos" && (
+                  <span className="text-xs font-normal text-muted-foreground"> / kg</span>
+                )}
+              </span>
+            ) : (
+              <span className="text-sm font-semibold text-accent">
+                Consultar precio
+              </span>
+            )}
           </div>
           <span className={cn(
             "text-xs font-semibold px-2.5 py-1 rounded-full",

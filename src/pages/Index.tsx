@@ -214,10 +214,10 @@ const Index = () => {
                       loading="lazy"
                     />
                     {/* Decorative leaf corner */}
-                    <img 
-                      src="/hoja_deco_imagenes.png" 
-                      alt="" 
-                      className="absolute -bottom-6 -left-6 w-24 sm:w-32 drop-shadow-2xl z-10 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:translate-x-4 group-hover:rotate-12 group-hover:scale-110 scale-x-[-1]" 
+                    <img
+                      src="/hoja_deco_imagenes.png"
+                      alt=""
+                      className="absolute -bottom-6 -left-6 w-24 sm:w-32 drop-shadow-2xl z-10 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:translate-x-4 group-hover:rotate-12 group-hover:scale-110 scale-x-[-1]"
                     />
                   </div>
                   <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-black/20 to-black/5 mt-16 shadow-2xl border-4 border-white/10 group">
@@ -228,10 +228,10 @@ const Index = () => {
                       loading="lazy"
                     />
                     {/* Decorative leaf corner */}
-                    <img 
-                      src="/hoja_deco_imagenes.png" 
-                      alt="" 
-                      className="absolute -bottom-6 -right-6 w-24 sm:w-32 drop-shadow-2xl z-10 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:-rotate-12 group-hover:scale-110" 
+                    <img
+                      src="/hoja_deco_imagenes.png"
+                      alt=""
+                      className="absolute -bottom-6 -right-6 w-24 sm:w-32 drop-shadow-2xl z-10 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:-rotate-12 group-hover:scale-110"
                     />
                   </div>
                 </div>
@@ -271,6 +271,7 @@ const Index = () => {
         <ImageGallerySection />
 
         {/* ===== TESTIMONIOS ===== */}
+        {/*
         <section className={cn("py-16 md:py-32 overflow-hidden transition-colors duration-700", currentTheme.isDark ? "bg-black/10" : "bg-white/40 backdrop-blur-md")}>
           <div className="container-custom">
             <div className="text-center mb-16 scroll-reveal">
@@ -285,7 +286,7 @@ const Index = () => {
             <TestimonialsCarousel currentTheme={currentTheme} />
           </div>
         </section>
-
+        */}
         {/* ===== CONTACTO — Nuttin-style ===== */}
         <ContactSection />
       </div>
