@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Mail, FileText } from "lucide-react";
 import { socialLinks } from "@/data/mockData";
 
 const TikTokIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
@@ -90,6 +90,12 @@ export const Footer = () => {
               <li>
                 <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contacto
+                </Link>
+              </li>
+              <li>
+                <Link to="/terminos" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <FileText className="h-3.5 w-3.5" />
+                  Términos y Condiciones
                 </Link>
               </li>
             </ul>

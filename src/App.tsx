@@ -12,6 +12,7 @@ import ProductoDetalle from "./pages/ProductoDetalle";
 import Nosotros from "./pages/Nosotros";
 import Contacto from "./pages/Contacto";
 import Checkout from "./pages/Checkout";
+import TerminosCondiciones from "./pages/TerminosCondiciones";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/terminos" element={<TerminosCondiciones />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

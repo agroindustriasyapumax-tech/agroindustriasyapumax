@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useCartContext } from "@/contexts/CartContext";
 import { ArrowLeft, MessageCircle, Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { socialLinks } from "@/data/mockData";
-import { CustomerInfo } from "@/types";
 import { calculateItemPrice } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -15,13 +14,9 @@ const Checkout = () => {
   const scrollRef = useScrollReveal();
   const { items, totalPrice, updateQuantity, removeItem } = useCartContext();
 
-  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-  });
+
   const [additionalNotes, setAdditionalNotes] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const generateWhatsAppMessage = () => {
     const itemsList = items
@@ -36,11 +31,6 @@ const Checkout = () => {
 
     const message = `
 🛒 *SOLICITUD DE PEDIDO*
-
-👤 *Datos del cliente:*
-• Nombre: ${customerInfo.firstName} ${customerInfo.lastName}
-• Teléfono: ${customerInfo.phone}
-${customerInfo.email ? `• Email: ${customerInfo.email}` : ""}
 
 📦 *Productos:*
 ${itemsList}
@@ -181,51 +171,9 @@ ${additionalNotes ? `📝 *Notas adicionales:*\n${additionalNotes}` : ""}
 
           {/* Customer Form */}
           <div className="scroll-reveal-right">
-            <h2 className="font-display text-xl font-semibold mb-4">Tus datos</h2>
+            <h2 className="font-display text-xl font-semibold mb-4">Detalles del pedido</h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="checkout-firstName">Nombre *</Label>
-                  <Input
-                    id="checkout-firstName"
-                    value={customerInfo.firstName}
-                    onChange={(e) => setCustomerInfo({ ...customerInfo, firstName: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="checkout-lastName">Apellido *</Label>
-                  <Input
-                    id="checkout-lastName"
-                    value={customerInfo.lastName}
-                    onChange={(e) => setCustomerInfo({ ...customerInfo, lastName: e.target.value })}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="checkout-phone">WhatsApp / Teléfono *</Label>
-                <Input
-                  id="checkout-phone"
-                  value={customerInfo.phone}
-                  onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                  placeholder="+51 999 999 999"
-                  required
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="checkout-email">Email (opcional)</Label>
-                <Input
-                  id="checkout-email"
-                  type="email"
-                  value={customerInfo.email}
-                  onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
-                  placeholder="tu@email.com"
-                />
-              </div>
 
               <div>
                 <Label htmlFor="checkout-notes">Notas adicionales (opcional)</Label>
@@ -238,7 +186,23 @@ ${additionalNotes ? `📝 *Notas adicionales:*\n${additionalNotes}` : ""}
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full group">
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={acceptedTerms}
+                  onChange={(e) => setAcceptedTerms(e.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary accent-primary shrink-0"
+                />
+                <span className="text-sm text-muted-foreground leading-snug">
+                  He leído y acepto los{" "}
+                  <Link to="/terminos" target="_blank" className="text-primary font-semibold underline underline-offset-2 hover:text-accent transition-colors">
+                    Términos y Condiciones
+                  </Link>{" "}
+                  y las Políticas de Privacidad.
+                </span>
+              </label>
+
+              <Button type="submit" size="lg" className="w-full group" disabled={!acceptedTerms}>
                 <MessageCircle className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
                 Enviar pedido por WhatsApp
               </Button>

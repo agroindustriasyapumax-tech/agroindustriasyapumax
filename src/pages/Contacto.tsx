@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 const Contacto = () => {
   const scrollRef = useScrollReveal();
   const { toast } = useToast();
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,7 +86,7 @@ const Contacto = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg text-foreground">Nuestra Planta</p>
-                      <p className="text-muted-foreground leading-relaxed">Pasaje Pisagua & Avenida San Pablo, La Victoria<br />Lima, Perú</p>
+                      <p className="text-muted-foreground leading-relaxed">Pje Pisagua 445-215, La Victoria 15018 <br />Lima, Perú</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
@@ -137,26 +140,7 @@ const Contacto = () => {
                 <p className="text-muted-foreground mb-8">Completa el formulario y un asesor se pondrá en contacto contigo.</p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-semibold text-foreground">Nombre completo</label>
-                      <Input id="name" placeholder="Tu nombre" required className="h-14 rounded-xl border-2 bg-muted/20 focus-visible:ring-0 focus-visible:border-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-semibold text-foreground">Empresa (Opcional)</label>
-                      <Input id="company" placeholder="Nombre de tu empresa" className="h-14 rounded-xl border-2 bg-muted/20 focus-visible:ring-0 focus-visible:border-primary" />
-                    </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-semibold text-foreground">Correo electrónico</label>
-                    <Input id="email" type="email" placeholder="tucorreo@ejemplo.com" required className="h-14 rounded-xl border-2 bg-muted/20 focus-visible:ring-0 focus-visible:border-primary" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-semibold text-foreground">Teléfono</label>
-                    <Input id="phone" type="tel" placeholder="+51 999 999 999" required className="h-14 rounded-xl border-2 bg-muted/20 focus-visible:ring-0 focus-visible:border-primary" />
-                  </div>
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-semibold text-foreground">Mensaje</label>
@@ -169,7 +153,23 @@ const Contacto = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full h-14 rounded-xl text-lg font-bold group shadow-lg shadow-primary/20">
+                  <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={acceptedTerms}
+                      onChange={(e) => setAcceptedTerms(e.target.checked)}
+                      className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary accent-primary shrink-0"
+                    />
+                    <span className="text-sm text-muted-foreground leading-snug">
+                      He leído y acepto los{" "}
+                      <Link to="/terminos" target="_blank" className="text-primary font-semibold underline underline-offset-2 hover:text-accent transition-colors">
+                        Términos y Condiciones
+                      </Link>{" "}
+                      y las Políticas de Privacidad.
+                    </span>
+                  </label>
+
+                  <Button type="submit" size="lg" className="w-full h-14 rounded-xl text-lg font-bold group shadow-lg shadow-primary/20" disabled={!acceptedTerms}>
                     Enviar Mensaje
                     <Send className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -194,7 +194,7 @@ const Contacto = () => {
             <div className="rounded-[2rem] overflow-hidden h-[500px] md:h-[650px] w-full relative group">
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6399143755975!2d-77.0093001!3d-12.068278099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c62748cfbb39%3A0x9a71246e35389e2f!2sAv%20San%20Pablo%20%26%20Pje%20Pisagua%2C%20La%20Victoria%2015019!5e0!3m2!1ses!2spe!4v1786740274952!5m2!1ses!2spe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6400555996543!2d-77.00941430000002!3d-12.068268399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c70062ca451b%3A0x8e134556414159c7!2sAgro%20Industrias%20Yapumax!5e0!3m2!1ses!2spe!4v1786742582791!5m2!1ses!2spe"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

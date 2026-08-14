@@ -86,12 +86,12 @@ export const HeroCarousel = () => {
               <img 
                 src="/hojas-flotantes.png" 
                 alt="" 
-                className="absolute top-[10%] -right-12 w-48 md:w-80 opacity-90 drop-shadow-2xl animate-float-slow z-20"
+                className="absolute top-[10%] -right-8 w-28 md:w-56 opacity-90 drop-shadow-2xl animate-float-slow z-20"
               />
               <img 
                 src="/hojas-flotantes.png" 
                 alt="" 
-                className="absolute bottom-[30%] -left-16 w-32 md:w-64 opacity-70 drop-shadow-xl animate-float-medium scale-x-[-1] blur-[2px] z-20 rotate-12"
+                className="absolute bottom-[30%] -left-10 w-20 md:w-40 opacity-70 drop-shadow-xl animate-float-medium scale-x-[-1] blur-[2px] z-20 rotate-12"
               />
             </div>
 
@@ -100,7 +100,7 @@ export const HeroCarousel = () => {
               <div className="max-w-4xl">
                 <h2
                   className={cn(
-                    "font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 sm:mb-6 transition-all duration-700 delay-200",
+                    "font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6 transition-all duration-700 delay-200 break-words",
                     index === current
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"

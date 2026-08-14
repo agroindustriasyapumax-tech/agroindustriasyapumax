@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +10,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 export const ContactSection = () => {
   const scrollRef = useScrollReveal();
   const { toast } = useToast();
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,50 +76,6 @@ export const ContactSection = () => {
                 <form onSubmit={handleContactSubmit} className="space-y-5">
                   <div className="space-y-1.5">
                     <label
-                      htmlFor="home-name"
-                      className="text-xs font-bold uppercase tracking-wider text-[#2C3316]/70"
-                    >
-                      Nombre completo
-                    </label>
-                    <Input
-                      id="home-name"
-                      placeholder="Nombre y Apellido"
-                      required
-                      className="h-12 rounded-xl border-2 bg-transparent text-[#2C3316] border-[#2C3316]/10 focus-visible:ring-0 focus-visible:border-[#B5BF32] transition-colors"
-                    />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label
-                      htmlFor="home-email"
-                      className="text-xs font-bold uppercase tracking-wider text-[#2C3316]/70"
-                    >
-                      E-mail
-                    </label>
-                    <Input
-                      id="home-email"
-                      type="email"
-                      placeholder="correo@ejemplo.com"
-                      required
-                      className="h-12 rounded-xl border-2 bg-transparent text-[#2C3316] border-[#2C3316]/10 focus-visible:ring-0 focus-visible:border-[#B5BF32] transition-colors"
-                    />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label
-                      htmlFor="home-phone"
-                      className="text-xs font-bold uppercase tracking-wider text-[#2C3316]/70"
-                    >
-                      Teléfono
-                    </label>
-                    <Input
-                      id="home-phone"
-                      type="tel"
-                      placeholder="Teléfono/WhatsApp"
-                      required
-                      className="h-12 rounded-xl border-2 bg-transparent text-[#2C3316] border-[#2C3316]/10 focus-visible:ring-0 focus-visible:border-[#B5BF32] transition-colors"
-                    />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label
                       htmlFor="home-message"
                       className="text-xs font-bold uppercase tracking-wider text-[#2C3316]/70"
                     >
@@ -131,9 +89,25 @@ export const ContactSection = () => {
                       className="rounded-xl border-2 bg-transparent text-[#2C3316] border-[#2C3316]/10 focus-visible:ring-0 focus-visible:border-[#B5BF32] resize-none transition-colors"
                     />
                   </div>
+                  <label className="flex items-start gap-3 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={acceptedTerms}
+                      onChange={(e) => setAcceptedTerms(e.target.checked)}
+                      className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary accent-primary shrink-0"
+                    />
+                    <span className="text-sm text-muted-foreground leading-snug">
+                      He leído y acepto los{" "}
+                      <Link to="/terminos" target="_blank" className="text-primary font-semibold underline underline-offset-2 hover:text-[#B5BF32] transition-colors">
+                        Términos y Condiciones
+                      </Link>{" "}
+                      y las Políticas de Privacidad.
+                    </span>
+                  </label>
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={!acceptedTerms}
                     className="w-full h-14 rounded-full text-lg font-bold group shadow-lg bg-[#D9A527] hover:bg-[#D9A527]/90 text-white border-none"
                   >
                     Enviar
