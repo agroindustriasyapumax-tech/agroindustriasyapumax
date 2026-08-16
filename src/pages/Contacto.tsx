@@ -82,7 +82,7 @@ const Contacto = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
             {/* Left Column: Info & Trust signals */}
-            <div className="space-y-12 scroll-reveal-left">
+            <div className="space-y-12 scroll-reveal">
               <div className="bg-white/80 backdrop-blur-sm dark:bg-card/90 rounded-3xl p-8 border border-border shadow-2xl">
                 <h3 className="font-display text-2xl font-semibold mb-8 text-foreground">Información de Contacto</h3>
                 <div className="space-y-6">
@@ -90,7 +90,7 @@ const Contacto = () => {
                     <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <MapPin className="h-6 w-6 text-secondary" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="font-semibold text-lg text-foreground">Nuestra Planta</p>
                       <p className="text-muted-foreground leading-relaxed">Pje Pisagua 445-215, La Victoria 15018 <br />Lima, Perú</p>
                     </div>
@@ -99,7 +99,7 @@ const Contacto = () => {
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Phone className="h-6 w-6 text-accent" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="font-semibold text-lg text-foreground">Llámanos</p>
                       <p className="text-muted-foreground">+51 944 221 793</p>
                     </div>
@@ -108,16 +108,16 @@ const Contacto = () => {
                     <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Mail className="h-6 w-6 text-blue-500" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="font-semibold text-lg text-foreground">Correo Electrónico</p>
-                      <p className="text-muted-foreground">agroindustriasyapumax@gmail.com</p>
+                      <p className="text-muted-foreground break-all">agroindustriasyapumax@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Clock className="h-6 w-6 text-purple-500" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="font-semibold text-lg text-foreground">Horario de Atención</p>
                       <p className="text-muted-foreground">Lunes a viernes 8:00 AM - 5:30 PM<br />Sábados 8:00 AM - 4:00 PM</p>
                     </div>
@@ -127,20 +127,20 @@ const Contacto = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/80 backdrop-blur-sm dark:bg-card/90 rounded-2xl p-6 border border-border shadow-lg flex items-center gap-4 hover:-translate-y-1 transition-transform">
-                  <ShieldCheck className="h-8 w-8 text-accent" />
-                  <span className="font-medium text-foreground">Calidad <br />Garantizada</span>
+                  <ShieldCheck className="h-8 w-8 text-accent shrink-0" />
+                  <span className="font-medium text-foreground text-sm sm:text-base">Calidad <br />Garantizada</span>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm dark:bg-card/90 rounded-2xl p-6 border border-border shadow-lg flex items-center gap-4 hover:-translate-y-1 transition-transform">
-                  <Truck className="h-8 w-8 text-secondary" />
-                  <span className="font-medium text-foreground">Despachos <br />Nacionales</span>
+                  <Truck className="h-8 w-8 text-secondary shrink-0" />
+                  <span className="font-medium text-foreground text-sm sm:text-base">Despachos <br />Nacionales</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Floating Form */}
-            <div className="scroll-reveal-right md:-mt-24 relative z-20">
-              <div className="bg-white/95 backdrop-blur-md dark:bg-card/95 rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-border text-foreground relative">
-                <div className="absolute top-0 right-12 w-24 h-2 bg-secondary rounded-b-xl" />
+            <div className="scroll-reveal md:-mt-24 relative z-20">
+              <div className="bg-white/95 backdrop-blur-md dark:bg-card/95 rounded-[2.5rem] p-6 sm:p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-border text-foreground relative">
+                <div className="absolute top-0 right-8 md:right-12 w-16 md:w-24 h-2 bg-secondary rounded-b-xl" />
 
                 <h2 className="font-display text-3xl font-bold mb-2">Envíanos un mensaje</h2>
                 <p className="text-muted-foreground mb-8">Completa el formulario y un asesor se pondrá en contacto contigo.</p>
