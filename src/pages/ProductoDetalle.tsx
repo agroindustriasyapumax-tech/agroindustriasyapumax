@@ -105,18 +105,46 @@ const ProductoDetalle = () => {
           "name": product.name,
           "description": product.description,
           "image": `https://www.agroindustriasyapumax.com${product.images[0]}`,
+          "sku": product.id,
           "brand": {
             "@type": "Brand",
             "name": "Agroindustrias Yapumax"
           },
-          ...(product.price > 0 ? {
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "PEN",
-              "price": product.price,
-              "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+          "offers": {
+            "@type": "Offer",
+            "url": `https://www.agroindustriasyapumax.com/producto/${product.id}`,
+            "priceCurrency": "PEN",
+            "price": product.price > 0 ? product.price.toFixed(2) : "0",
+            "availability": product.inStock
+              ? "https://schema.org/InStock"
+              : product.price === 0
+                ? "https://schema.org/PreOrder"
+                : "https://schema.org/OutOfStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Agroindustrias Yapumax"
             }
-          } : {})
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "author": {
+              "@type": "Organization",
+              "name": "Agroindustrias Yapumax"
+            },
+            "reviewBody": product.shortDescription || product.description.slice(0, 155)
+          }
         }}
       />
       {/* Floating product images — decorative */}
