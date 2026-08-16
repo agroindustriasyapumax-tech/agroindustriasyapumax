@@ -43,9 +43,10 @@ export const Header = () => {
   };
 
   return (
+    <>
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
           ? "bg-card/95 backdrop-blur-xl shadow-lg shadow-black/5 rounded-b-[1.5rem] mx-2 border-b border-border/50"
           : "bg-card/80 backdrop-blur-sm"
@@ -167,5 +168,7 @@ export const Header = () => {
         </div>
       </div>
     </header>
+    <div className="h-[83px] md:h-[99px] shrink-0" aria-hidden="true" />
+    </>
   );
 };
