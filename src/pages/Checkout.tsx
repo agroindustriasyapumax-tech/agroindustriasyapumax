@@ -9,6 +9,7 @@ import { ArrowLeft, MessageCircle, Minus, Plus, Trash2, ShoppingBag } from "luci
 import { socialLinks } from "@/data/mockData";
 import { calculateItemPrice } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SEOHead } from "@/components/SEOHead";
 
 const Checkout = () => {
   const scrollRef = useScrollReveal();
@@ -72,6 +73,12 @@ ${additionalNotes ? `📝 *Notas adicionales:*\n${additionalNotes}` : ""}
 
   return (
     <div ref={scrollRef} className="py-8 md:py-12">
+      <SEOHead
+        title="Finalizar Pedido"
+        description="Revisa y confirma tu pedido de productos agroindustriales."
+        path="/checkout"
+        noindex
+      />
       <div className="container-custom">
         <Button variant="ghost" className="mb-6" asChild>
           <Link to="/productos">

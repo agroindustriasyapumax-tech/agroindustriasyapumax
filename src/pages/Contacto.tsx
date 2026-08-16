@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, Truck } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from "@/components/SEOHead";
 
 const Contacto = () => {
   const scrollRef = useScrollReveal();
@@ -22,6 +23,11 @@ const Contacto = () => {
 
   return (
     <div ref={scrollRef} className="flex flex-col min-h-screen bg-background transition-colors duration-500">
+      <SEOHead
+        title="Contacto"
+        description="Contáctanos para pedidos mayoristas, cotizaciones y consultas sobre maní y soya. Ubicados en La Victoria, Lima, Perú. Atención por WhatsApp, correo y redes sociales."
+        path="/contacto"
+      />
 
       {/* Header Block */}
       <div className="relative pt-36 pb-24 text-accent-foreground overflow-hidden rounded-b-[3rem]">

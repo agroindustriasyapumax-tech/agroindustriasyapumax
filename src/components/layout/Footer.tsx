@@ -18,9 +18,9 @@ export const Footer = () => {
     <footer className="bg-card border-t border-border relative">
       <div className="h-[3px] w-full brand-gradient absolute top-0 left-0 rounded-b-full" />
       <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 lg:col-span-4">
             <Link to="/" className="flex items-center gap-2 mb-4 group">
               <img
                 src="/logo.png"
@@ -74,7 +74,7 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="font-display text-lg font-semibold mb-4">Enlaces</h4>
             <ul className="space-y-2">
               <li>
@@ -92,17 +92,11 @@ export const Footer = () => {
                   Contacto
                 </Link>
               </li>
-              <li>
-                <Link to="/terminos" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
-                  <FileText className="h-3.5 w-3.5" />
-                  Términos y Condiciones
-                </Link>
-              </li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-display text-lg font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li>
@@ -112,7 +106,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <MessageCircle className="h-4 w-4 shrink-0" />
                   WhatsApp
                 </a>
               </li>
@@ -121,8 +115,8 @@ export const Footer = () => {
                   href="mailto:agroindustriasyapumax@gmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Mail className="h-4 w-4" />
-                  agroindustriasyapumax@gmail.com
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span className="break-all text-xs">agroindustriasyapumax@gmail.com</span>
                 </a>
               </li>
               <li>
@@ -132,7 +126,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Facebook className="h-4 w-4" />
+                  <Facebook className="h-4 w-4 shrink-0" />
                   Facebook
                 </a>
               </li>
@@ -143,7 +137,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Instagram className="h-4 w-4" />
+                  <Instagram className="h-4 w-4 shrink-0" />
                   @agro_yapumax
                 </a>
               </li>
@@ -154,9 +148,41 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <TikTokIcon className="h-4 w-4" />
+                  <TikTokIcon className="h-4 w-4 shrink-0" />
                   TikTok
                 </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="lg:col-span-3">
+            <h4 className="font-display text-lg font-semibold mb-4">Legal</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/terminos" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <FileText className="h-3.5 w-3.5" />
+                  Términos y Condiciones
+                </Link>
+              </li>
+              <li>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="https://drive.google.com/file/d/1YykLaVK2LCmsFPM65zc3K7v0-ydMR1vI/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block hover:opacity-80 transition-opacity"
+                  >
+                    <img
+                      src="/logo_reclamaciones.png"
+                      alt="Libro de Reclamaciones"
+                      className="w-full max-w-[150px] object-contain"
+                    />
+                  </a>
+                  <p className="text-[10px] leading-tight text-muted-foreground">
+                    Conforme a lo establecido en el Código de Protección y Defensa del Consumidor, este establecimiento cuenta con un Libro de Reclamaciones Virtual a tu disposición. Para registrar una queja o reclamo, haz clic en el logotipo, descarga el formato editable, complétalo y envíalo al correo electrónico: agroindustriasyapumax@gmail.com.
+                  </p>
+                </div>
               </li>
             </ul>
           </div>

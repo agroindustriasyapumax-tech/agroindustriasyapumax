@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, Filter, X } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { SEOHead } from "@/components/SEOHead";
 
 const Productos = () => {
   const scrollRef = useScrollReveal();
@@ -39,6 +40,11 @@ const Productos = () => {
 
   return (
     <div ref={scrollRef} className="flex flex-col min-h-screen bg-cta transition-colors duration-500">
+      <SEOHead
+        title="Catálogo de Productos"
+        description="Explora nuestro catálogo de maní crudo, tostado, molido, soya en grano y mantequilla de maní. Productos agroindustriales de alta calidad para mayoristas y minoristas."
+        path="/productos"
+      />
       {/* Header Block */}
       <div className="relative pt-36 pb-24 text-accent-foreground overflow-hidden rounded-b-[3rem]">
         {/* Background Image & Overlay */}

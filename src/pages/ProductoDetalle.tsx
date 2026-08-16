@@ -11,6 +11,7 @@ import { ArrowLeft, ShoppingCart, Minus, Plus, Share2, Info } from "lucide-react
 import { cn, calculateUnitTotal } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ProductCard } from "@/components/products/ProductCard";
+import { SEOHead } from "@/components/SEOHead";
 
 const ProductoDetalle = () => {
   const scrollRef = useScrollReveal();
@@ -31,6 +32,11 @@ const ProductoDetalle = () => {
   if (!product) {
     return (
       <div className="container-custom py-20 text-center">
+        <SEOHead
+          title="Producto no encontrado"
+          description="El producto que buscas no está disponible."
+          noindex
+        />
         <h1 className="font-display text-2xl font-bold mb-4">Producto no encontrado</h1>
         <Button asChild>
           <Link to="/productos">Volver al catálogo</Link>
@@ -88,6 +94,31 @@ const ProductoDetalle = () => {
 
   return (
     <div ref={scrollRef} className="pb-12 bg-[#faf9f6] dark:bg-background relative overflow-hidden min-h-screen">
+      <SEOHead
+        title={product.name}
+        description={product.shortDescription || product.description.slice(0, 155)}
+        path={`/producto/${product.id}`}
+        ogImage={`https://www.agroindustriasyapumax.com${product.images[0]}`}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": product.name,
+          "description": product.description,
+          "image": `https://www.agroindustriasyapumax.com${product.images[0]}`,
+          "brand": {
+            "@type": "Brand",
+            "name": "Agroindustrias Yapumax"
+          },
+          ...(product.price > 0 ? {
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "PEN",
+              "price": product.price,
+              "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+            }
+          } : {})
+        }}
+      />
       {/* Floating product images — decorative */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <img

@@ -2,26 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.agroindustriasyapumax.com/</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://www.agroindustriasyapumax.com/productos</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://www.agroindustriasyapumax.com/nosotros</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://www.agroindustriasyapumax.com/contacto</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/terminos</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/producto/1</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/producto/2</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/producto/3</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/producto/4</loc>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.agroindustriasyapumax.com/producto/5</loc>
+    <lastmod>2026-08-16</lastmod>
   </url>
 </urlset>

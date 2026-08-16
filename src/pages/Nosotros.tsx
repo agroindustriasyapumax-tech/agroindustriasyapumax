@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { WorldMapSection } from "@/components/map/WorldMapSection";
 import { ContactSection } from "@/components/home/ContactSection";
+import { SEOHead } from "@/components/SEOHead";
 
 type ThemeState = { bg: string; text: string; isDark: boolean };
 
@@ -95,6 +96,11 @@ const Nosotros = () => {
 
   return (
     <div className={cn("flex flex-col min-h-screen transition-colors duration-700 ease-in-out", currentTheme.bg, currentTheme.text)}>
+      <SEOHead
+        title="Sobre Nosotros"
+        description="Conoce la historia, misión y visión de Agroindustrias Yapumax. Más de 20 años de experiencia en producción y comercialización de maní y soya en Perú y Bolivia."
+        path="/nosotros"
+      />
       <Hero currentTheme={currentTheme} />
       <CompanyDescription currentTheme={currentTheme} />
       <AutoRevealStory currentTheme={currentTheme} />
@@ -188,7 +194,7 @@ function CompanyDescription({ currentTheme }: { currentTheme: ThemeState }) {
           >
             <div className="relative group rounded-[2rem] bg-white p-8 md:p-10 shadow-2xl border border-border overflow-hidden">
               <div className="absolute inset-0 z-0 opacity-15 transition-transform duration-700 group-hover:scale-105">
-                <img src="/carrusel_hero/campo.jpg" alt="Fondo calidad" className="w-full h-full object-cover" />
+                <img src="/carrusel_hero/campo.jpg" alt="" className="w-full h-full object-cover" />
               </div>
               <div className="absolute inset-0 bg-white/90 z-0 backdrop-blur-[2px]" />
 
@@ -414,14 +420,14 @@ function MediaGridSection({ currentTheme }: { currentTheme: ThemeState }) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <motion.img
           src="/soya_flotante.png"
-          alt="Soya"
+          alt=""
           className="absolute top-20 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 2 }}
         />
         <motion.img
           src="/mani_flotante.png"
-          alt="Maní"
+          alt=""
           className="absolute bottom-20 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
@@ -536,28 +542,28 @@ function TimelineSection({ currentTheme }: { currentTheme: ThemeState }) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <motion.img
           src="/soya_flotante.png"
-          alt="Soya"
+          alt=""
           className="absolute top-20 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
         <motion.img
           src="/mani_flotante.png"
-          alt="Maní"
+          alt=""
           className="absolute bottom-40 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
         />
         <motion.img
           src="/soya_flotante.png"
-          alt="Soya"
+          alt=""
           className="absolute top-1/2 right-20 w-32 md:w-48 opacity-30"
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 8, ease: "easeInOut", delay: 2 }}
         />
         <motion.img
           src="/mani_flotante.png"
-          alt="Maní"
+          alt=""
           className="absolute bottom-1/4 left-20 w-32 md:w-48 opacity-30"
           animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
           transition={{ repeat: Infinity, duration: 9, ease: "easeInOut", delay: 3 }}
@@ -647,7 +653,7 @@ function ValuesSection({ currentTheme }: { currentTheme: ThemeState }) {
     <section className="relative py-28 transition-colors duration-700 overflow-hidden">
       {/* Background image & overlay */}
       <div className="absolute inset-0 z-0">
-        <img src="/carrusel_hero/campo.jpg" alt="Fondo pilares" className="w-full h-full object-cover" />
+        <img src="/carrusel_hero/campo.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/95 mix-blend-multiply" />
         <div className="absolute inset-0 bg-primary/20" />
       </div>
@@ -726,14 +732,14 @@ function MissionVisionSection({ currentTheme }: { currentTheme: ThemeState }) {
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
         <motion.img
           src="/soya_flotante.png"
-          alt="Soya"
+          alt=""
           className="absolute top-10 left-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
         <motion.img
           src="/mani_flotante.png"
-          alt="Maní"
+          alt=""
           className="absolute bottom-10 right-10 w-48 md:w-64 opacity-30"
           animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
@@ -774,7 +780,7 @@ function MissionVisionSection({ currentTheme }: { currentTheme: ThemeState }) {
             {/* Hoja Decorativa */}
             <img
               src="/hoja_deco_imagenes.png"
-              alt="Hoja decorativa"
+              alt=""
               className="absolute -bottom-8 -right-8 w-32 opacity-80 drop-shadow-xl z-20 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:-rotate-12"
             />
           </motion.div>
@@ -788,7 +794,7 @@ function MissionVisionSection({ currentTheme }: { currentTheme: ThemeState }) {
             className="relative group rounded-[2rem] bg-white p-8 md:p-12 shadow-2xl border border-border overflow-hidden"
           >
             <div className="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
-              <img src="/about_us/sacos.jpg" alt="Fondo Visión" className="w-full h-full object-cover" />
+              <img src="/about_us/sacos.jpg" alt="" className="w-full h-full object-cover" />
             </div>
             <div className="absolute inset-0 bg-white/90 z-0 backdrop-blur-[2px]" />
 
@@ -810,7 +816,7 @@ function MissionVisionSection({ currentTheme }: { currentTheme: ThemeState }) {
             {/* Hoja Decorativa */}
             <img
               src="/hoja_deco_imagenes.png"
-              alt="Hoja decorativa"
+              alt=""
               className="absolute -bottom-8 -right-8 w-32 opacity-80 drop-shadow-xl z-20 transition-all duration-500 ease-out group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:-rotate-12"
             />
           </motion.div>

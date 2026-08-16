@@ -10,6 +10,7 @@ import { WorldMapSection } from "@/components/map/WorldMapSection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { ImageGallerySection } from "@/components/home/ImageGallerySection";
 import { TestimonialsCarousel } from "@/components/home/TestimonialsCarousel";
+import { SEOHead } from "@/components/SEOHead";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useToast } from "@/hooks/use-toast";
 import { products, testimonials, galleryImages } from "@/data/mockData";
@@ -69,7 +70,12 @@ const Index = () => {
         currentTheme.text
       )}
     >
-      <h1 className="sr-only">Agroindustrias Yapumax — Venta de Maní y Soya en Perú y Bolivia</h1>
+      <SEOHead
+        title="Agroindustrias Yapumax — Venta de Maní y Soya en Perú y Bolivia"
+        description="Venta y exportación de Soya, Maní y Mantequilla de Maní de primera calidad. Distribuimos a todo el Perú y Bolivia. Calidad & Lealtad en tu mesa."
+        path="/"
+      />
+      <h1 className="sr-only">Agroindustrias Yapumax — +20 años de Venta de Maní y Soya en Perú y Bolivia</h1>
 
       {/* ===== PARALLAX FLOATING ELEMENTS ===== */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">

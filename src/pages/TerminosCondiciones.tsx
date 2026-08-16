@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Store, Tag, Lock, Mail, AlertTriangle } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const sections = [
   {
@@ -42,6 +43,11 @@ const sections = [
 const TerminosCondiciones = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background transition-colors duration-500">
+      <SEOHead
+        title="Términos y Condiciones"
+        description="Términos y condiciones de uso, políticas de privacidad y libro de reclamaciones de Agroindustrias Yapumax. Conforme al Código de Protección y Defensa del Consumidor."
+        path="/terminos"
+      />
       {/* Hero */}
       <section className="relative pt-36 pb-24 text-white overflow-hidden rounded-b-[3rem]">
         <div
