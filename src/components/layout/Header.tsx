@@ -43,12 +43,11 @@ export const Header = () => {
   };
 
   return (
-    <>
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "sticky top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "bg-card/95 backdrop-blur-xl shadow-lg shadow-black/5 rounded-b-[1.5rem] mx-2 border-b border-border/50"
+          ? "bg-card/95 backdrop-blur-xl shadow-md border-b border-border/50"
           : "bg-card/80 backdrop-blur-sm"
       )}
     >
@@ -58,8 +57,8 @@ export const Header = () => {
         isScrolled ? "h-[2px] rounded-b-full" : "h-[3px]"
       )} />
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo — much bigger now */}
+        <div className="flex items-center justify-between h-16 md:h-24">
+          {/* Logo */ }
           <Link
             to="/"
             onClick={handleHomeClick}
@@ -68,7 +67,7 @@ export const Header = () => {
             <img
               src="/logo.png"
               alt="Agroindustrias Yapumax"
-              className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 dark:bg-white/90 dark:rounded-2xl dark:p-1"
+              className="h-10 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 dark:bg-white/90 dark:rounded-2xl dark:p-1"
             />
           </Link>
 
@@ -168,7 +167,5 @@ export const Header = () => {
         </div>
       </div>
     </header>
-    <div className="h-[83px] md:h-[99px] shrink-0" aria-hidden="true" />
-    </>
   );
 };

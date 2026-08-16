@@ -78,12 +78,12 @@ const Index = () => {
       <h1 className="sr-only">Agroindustrias Yapumax — +20 años de Venta de Maní y Soya en Perú y Bolivia</h1>
 
       {/* ===== PARALLAX FLOATING ELEMENTS ===== */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
+      <div className="pointer-events-none fixed inset-0 z-0" style={{ overflow: 'clip', width: '100vw' }}>
         <img
           src="/mani_flotante.png"
           alt=""
           className={cn(
-            "absolute -left-16 w-48 animate-float-slow transition-all duration-700 ease-out",
+            "absolute -left-16 w-48 animate-float-slow transition-all duration-700 ease-out max-[768px]:w-28 max-[768px]:-left-10",
             currentTheme.isDark ? "opacity-90 drop-shadow-2xl brightness-110" : "opacity-80 mix-blend-multiply"
           )}
           style={{ top: `${Math.max(20, 40 - scrollY * 0.05)}%`, transform: `rotate(${scrollY * 0.05}deg)` }}
@@ -93,7 +93,7 @@ const Index = () => {
           src="/soya_flotante.png"
           alt=""
           className={cn(
-            "absolute -right-20 w-56 animate-float-medium transition-all duration-700 ease-out",
+            "absolute -right-20 w-56 animate-float-medium transition-all duration-700 ease-out max-[768px]:w-32 max-[768px]:-right-14",
             currentTheme.isDark ? "opacity-90 drop-shadow-2xl brightness-110" : "opacity-70 mix-blend-multiply"
           )}
           style={{ top: `${Math.max(40, 60 - scrollY * 0.03)}%`, transform: `rotate(${-scrollY * 0.03}deg)` }}
@@ -103,7 +103,7 @@ const Index = () => {
           src="/mani_flotante.png"
           alt=""
           className={cn(
-            "absolute right-[15%] w-24 animate-float-slow transition-all duration-700 ease-out blur-[2px]",
+            "absolute right-[15%] w-24 animate-float-slow transition-all duration-700 ease-out blur-[2px] max-[768px]:w-16 max-[768px]:right-[5%]",
             currentTheme.isDark ? "opacity-60 drop-shadow-lg" : "opacity-50 mix-blend-multiply"
           )}
           style={{ top: `${Math.max(10, 30 - scrollY * 0.04)}%`, transform: `rotate(${scrollY * 0.1}deg)` }}

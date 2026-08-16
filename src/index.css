@@ -123,6 +123,12 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    overflow-x: clip;
+  }
+
+  #root {
+    overflow-x: clip;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -408,6 +414,7 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 /* ========================================

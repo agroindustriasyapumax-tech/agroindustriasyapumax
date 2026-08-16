@@ -86,12 +86,12 @@ export const HeroCarousel = () => {
               <img 
                 src="/hojas-flotantes.png" 
                 alt="" 
-                className="absolute top-[10%] -right-8 w-28 md:w-56 opacity-90 drop-shadow-2xl animate-float-slow z-20"
+                className="absolute top-[10%] right-0 w-20 md:w-56 opacity-90 drop-shadow-2xl animate-float-slow z-20"
               />
               <img 
                 src="/hojas-flotantes.png" 
                 alt="" 
-                className="absolute bottom-[30%] -left-10 w-20 md:w-40 opacity-70 drop-shadow-xl animate-float-medium scale-x-[-1] blur-[2px] z-20 rotate-12"
+                className="absolute bottom-[30%] left-0 w-16 md:w-40 opacity-70 drop-shadow-xl animate-float-medium scale-x-[-1] blur-[2px] z-20 rotate-12"
               />
             </div>
 
