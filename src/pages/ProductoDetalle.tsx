@@ -123,7 +123,8 @@ const ProductoDetalle = () => {
             "seller": {
               "@type": "Organization",
               "name": "Agroindustrias Yapumax"
-            }
+            },
+            "hasMerchantReturnPolicy": false
           },
           "aggregateRating": {
             "@type": "AggregateRating",
